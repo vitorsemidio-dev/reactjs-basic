@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 
+import './styles.css';
+
 export default class Main extends Component {
     state = {
         posts: [],
@@ -17,10 +19,15 @@ export default class Main extends Component {
         this.setState({ posts })
     }
     render() {
+        const { posts } = this.state;
         return (
             <div className="post-list">
-                {this.state.posts.map(post => (
-                    <h2 key={post.id}>{post.title}</h2>
+                {posts.map(post => (
+                    <article key={post.id}>
+                        <strong>{post.title}</strong>
+                        <p>{post.body}</p>
+                        <a href="www.google.com">Clique aqui</a>
+                    </article>
                 ))}
             </div>
         );

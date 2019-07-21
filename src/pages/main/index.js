@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -56,7 +57,7 @@ export default class Main extends Component {
                     <article key={post.id}>
                         <strong>{post.title}</strong>
                         <p>{post.body}</p>
-                        <a href="www.google.com">Clique aqui</a>
+                        <Link to={`/detalhe/${post.id}`}>Clique aqui</Link>
                     </article>
                 ))}                
             </div>
